@@ -42,3 +42,17 @@ Please edit the paths of pretrained  hifi-model,wav2mel,dvector,SingleVC in conf
 ```bash
 python Any2Any/solver.py
 ```
+
+Seyed mahdi godrazi
+
+Voice conversion (VC) aims to transform latent speaker related information of source speeches to that of the target
+while preserving the linguistic content. Conventional statis tical modeling techniques, e.g., frequency warped-based
+and GMM-based model, are considered to be limited by deficient feature representation. Technological advance-
+ments from statistical modeling to deep learning have made remarkable progress, especially researches towards the non-
+parallel corpus. Among the methods, there exist two main patterns: encoder-decoder-based and GAN-based. The for-
+mer usually performs speaker-content disentanglement, then conducts the conversion through combining source speaker-
+independent features with target speaker-related features. The pattern can be further divided into PPG-based, ASR-TTS,
+and Auto-encoder etc .
+Typical applications includingFragmentVC, AutoVC and AdaIn-VC, are devoted
+to solving any-to-any (A2A) problems. The GAN-based models, e.g., CycleGAN-VC, StarGAN-VC,
+are designed for a predefined set of speakers, and due to lack of explicit speaker embeddings, can hardly realize A2A VC.
