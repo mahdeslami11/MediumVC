@@ -136,5 +136,14 @@ Assistant: Mrs. Marzieh Ali Atashi
 2110
 
 	
+8-
+		
+Due to the broken laptop and the incident that happened, I do not have access to the video files, the only ones sent through Jameel were for the professor.
+But all Ms. Atshi's movies are available at this address
+	https://www.aparat.com/maissa0
 	
+	
+9-
+	
+propozal  ok 	
 	
