@@ -44,7 +44,9 @@ python Any2Any/solver.py
 ```
 
 Seyed mahdi godrazi
+
 1- 
+
 pre-training model trained on VCTK. 
 demonstrate that, for seen or unseen speakers, MediumVC
 performs better both in naturalness and similarity. The advance in naturalness indicates, compared with Wav2Vec
@@ -58,7 +60,7 @@ methods(except FragmentVC). Compared to discrete speaker embeddings, that from t
 seems to be smoother and more adaptable to unseen speakers.
 
 2- 
-CONCLUSION
+
 In this paper, we propose SingleVC to perform A2O VC,and based on it, we propose MediumVC to perform A2A
 VC. The key to well-performance is that we build asymmetric reconstruction tasks for self-supervised learning. For Sin-
 gleVC, we employ PSDR to edit source pitches, promoting the SingleVC to learn robust content information by rebuild-
@@ -66,4 +68,50 @@ ing source speech. For MediumVC, employing SSIF processed by SingleVC promotes M
 speaker embeddings to enhance target similarity. It is asymmetric tasks that drive models to learn more robust features
 purposefully.
 
+
 3-
+
+ModuleNotFoundError                       Traceback (most recent call last)
+
+<ipython-input-1-cccb1023891d> in <module>
+      9 import yaml
+     10 from torch.utils.data import DataLoader
+---> 11 from Any2Any import util
+     12 from Any2Any.meldataset import Test_MelDataset, get_infer_dataset_filelist,mel_denormalize
+     13 from Any2Any.model.any2any import MagicModel
+
+ModuleNotFoundError: No module named 'Any2Any'
+
+
+import os
+os.environ['CUDA_VISIBLE_DEVICES'] = '0'
+import time
+# import sys
+# sys.path.append("")
+import torch
+from torch.backends import cudnn
+import numpy as np
+import yaml
+from torch.utils.data import DataLoader
+from Any2Any import util
+from Any2Any.meldataset import Test_MelDataset, get_infer_dataset_filelist,mel_denormalize
+from Any2Any.model.any2any import MagicModel
+from hifivoice.inference_e2e import  hifi_infer
+
+
+class Solver():
+	def __init__(self, config):
+		super(Solver, self).__init__()
+		self.config = config
+		self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+		self.make_records()
+		self.Generator = MagicModel().to(self.device)
+		if self.config['pre_train_singlevc']:
+			singlevc_checkpoint = torch.load(self.config['singlevc_model_path'], map_location='cpu')
+			self.Generator.any2one.load_state_dict(singlevc_checkpoint['Generator'])
+			self.Generator.any2one.eval()
+			self.Generator.any2one.remove_weight_norm()
+		self.resume_model(self.config['resume_path'])
+		self.logging.info('config = %s', self.config)
+		print('param Generator size = %fM ' % (util.count_parameters_in_M(self.Generator)))
+
