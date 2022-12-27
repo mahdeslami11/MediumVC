@@ -117,3 +117,7 @@ class Solver():
 		print('param Generator size = %fM ' % (util.count_parameters_in_M(self.Generator)))
 	"
 
+	
+	5- 
+	
+	https://github.com/BrightGu/MediumVC
