@@ -44,7 +44,7 @@ python Any2Any/solver.py
 ```
 
 Seyed mahdi godrazi
-
+1- 
 pre-training model trained on VCTK. 
 demonstrate that, for seen or unseen speakers, MediumVC
 performs better both in naturalness and similarity. The advance in naturalness indicates, compared with Wav2Vec
@@ -56,3 +56,14 @@ Additionally, AdaIn-VC with the least parameters achieves the best performances 
 We consider the main problem is the employing of discrete speaker embeddings produced by extra pre-trained SV systems in the other four
 methods(except FragmentVC). Compared to discrete speaker embeddings, that from the Autoencoder-based model(AdaInVC)
 seems to be smoother and more adaptable to unseen speakers.
+
+2- 
+CONCLUSION
+In this paper, we propose SingleVC to perform A2O VC,and based on it, we propose MediumVC to perform A2A
+VC. The key to well-performance is that we build asymmetric reconstruction tasks for self-supervised learning. For Sin-
+gleVC, we employ PSDR to edit source pitches, promoting the SingleVC to learn robust content information by rebuild-
+ing source speech. For MediumVC, employing SSIF processed by SingleVC promotes MediumVC to rely more on
+speaker embeddings to enhance target similarity. It is asymmetric tasks that drive models to learn more robust features
+purposefully.
+
+3-
