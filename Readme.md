@@ -45,14 +45,14 @@ python Any2Any/solver.py
 
 Seyed mahdi godrazi
 
-Voice conversion (VC) aims to transform latent speaker related information of source speeches to that of the target
-while preserving the linguistic content. Conventional statis tical modeling techniques, e.g., frequency warped-based
-and GMM-based model, are considered to be limited by deficient feature representation. Technological advance-
-ments from statistical modeling to deep learning have made remarkable progress, especially researches towards the non-
-parallel corpus. Among the methods, there exist two main patterns: encoder-decoder-based and GAN-based. The for-
-mer usually performs speaker-content disentanglement, then conducts the conversion through combining source speaker-
-independent features with target speaker-related features. The pattern can be further divided into PPG-based, ASR-TTS,
-and Auto-encoder etc .
-Typical applications includingFragmentVC, AutoVC and AdaIn-VC, are devoted
-to solving any-to-any (A2A) problems. The GAN-based models, e.g., CycleGAN-VC, StarGAN-VC,
-are designed for a predefined set of speakers, and due to lack of explicit speaker embeddings, can hardly realize A2A VC.
+pre-training model trained on VCTK. 
+demonstrate that, for seen or unseen speakers, MediumVC
+performs better both in naturalness and similarity. The advance in naturalness indicates, compared with Wav2Vec
+2.0 based embeddings in FragmentVC and deep content-related
+features in AutoVC and AdaIN-VC, SSIF maintains more robust speaker-independent features. Meanwhile, removing the 
+influence of multi-speakers and building a specific-speaker
+periodic pattern further promote the advance in similarity.
+Additionally, AdaIn-VC with the least parameters achieves the best performances on ACC.
+We consider the main problem is the employing of discrete speaker embeddings produced by extra pre-trained SV systems in the other four
+methods(except FragmentVC). Compared to discrete speaker embeddings, that from the Autoencoder-based model(AdaInVC)
+seems to be smoother and more adaptable to unseen speakers.
