@@ -70,7 +70,7 @@ purposefully.
 
 
 3-
-
+"
 ModuleNotFoundError                       Traceback (most recent call last)
 
 <ipython-input-1-cccb1023891d> in <module>
@@ -96,6 +96,7 @@ from torch.utils.data import DataLoader
 from Any2Any import util
 from Any2Any.meldataset import Test_MelDataset, get_infer_dataset_filelist,mel_denormalize
 from Any2Any.model.any2any import MagicModel
+	
 from hifivoice.inference_e2e import  hifi_infer
 
 
@@ -114,4 +115,5 @@ class Solver():
 		self.resume_model(self.config['resume_path'])
 		self.logging.info('config = %s', self.config)
 		print('param Generator size = %fM ' % (util.count_parameters_in_M(self.Generator)))
+	"
 
