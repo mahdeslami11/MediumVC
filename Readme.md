@@ -146,4 +146,9 @@ But all Ms. Atshi's movies are available at this address
 9-
 	
 propozal  ok 	
+
+10
+link orginal 
+
+https://github.com/BrightGu/MediumVC
 	
