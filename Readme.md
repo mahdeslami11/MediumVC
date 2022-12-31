@@ -126,7 +126,7 @@ class Solver():
 	
 6-
 	
-Seyed Mehdi Moazzami Gudarzi, I am a master's student at South Tehran University, in the field of medical engineering, bioelectrical orientation.
+Mehdi Moazzami Gudarzi, I am a master's student at South Tehran University, in the field of medical engineering, bioelectrical orientation.
 This project is related to the course of digital signal processing
 The professor of this course and my guide in carrying out the project is Dr. Mehdi Eslami.
 Assistant: Mrs. Marzieh Ali Atashi
