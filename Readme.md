@@ -151,4 +151,8 @@ propozal  ok
 link orginal 
 
 https://github.com/BrightGu/MediumVC
+
+
+ارائه پروژه نهایی
+https://drive.google.com/file/d/12fXzB-31-T6cpTpsCmd58xXk6NmYkgZu/view?usp=sharing
 	
